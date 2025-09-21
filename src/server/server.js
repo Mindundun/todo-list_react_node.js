@@ -61,7 +61,7 @@ app.get('/api/todos', (req, res) => {
             
     db.query(sql, (err, data) => {
         if(!err) { // null
-            res.json(data); // res.status(200).json(data); -> Array 객체
+            res.status(200).json(data); // res.status(200).json(data); -> Array 객체
         } else {
             console.log('error :', err);
             res.status(100).json({error : 'DB query error'});
