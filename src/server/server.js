@@ -58,12 +58,31 @@ app.get('/api/todos', (req, res) => {
     const sql = `SELECT id, contents, completed
                    FROM todos 
                   ORDER BY id DESC`;
-    
-                  
-    console.log("sql",sql);             
+            
     db.query(sql, (err, data) => {
         if(!err) { // null
             res.json(data); // res.status(200).json(data); -> Array 객체
+        } else {
+            console.log('error :', err);
+            res.status(100).json({error : 'DB query error'});
+        }
+    })
+});
+
+// 할일 등록
+app.post('/api/todos', (req, res) => {
+    const contents = req.body.contents;
+    const completed = req.body.completed;
+
+    console.log("sql",completed);
+    
+    const sql = `INSERT INTO todos(contents, completed) values (?, ?)`
+    
+    
+    
+    db.query(sql, [contents, completed],(err, data) => {
+        if(!err) { // null
+            res.status(201).json(data); 
         } else {
             console.log('error :', err);
             res.status(100).json({error : 'DB query error'});
