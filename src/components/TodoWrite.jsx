@@ -168,6 +168,8 @@ function TodoWrite() {
             padding: "12px 24px",
             borderRadius: "6px",
             fontSize: "16px",
+            color: "#333",
+            fontWeight: "600",
             cursor: loading ? "not-allowed" : "pointer",
             transition: "background-color 0.3s ease",
           }}

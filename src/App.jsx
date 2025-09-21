@@ -24,16 +24,12 @@ function App() {
         <Link
           to="/write"
           style={buttonStyle}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
         >
           할일 등록
         </Link>
         <Link
           to="/list"
           style={buttonStyle}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
         >
           할일 목록조회
         </Link>
